@@ -1,6 +1,5 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-set cursorline  " highlight current line
 set list
 set wildmenu
 " set the runtime path to include Vundle and initialize
@@ -19,14 +18,14 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 " Plugin 'Valloric/YouCompleteMe'
-Plugin 'elzr/vim-json'
-Plugin 'fatih/vim-go'
+"" Plugin 'elzr/vim-json'
+"" Plugin 'fatih/vim-go'
 
-Plugin 'magic-dot-files/TagHighlight'
+"" Plugin 'magic-dot-files/TagHighlight'
 
-" Plugin 'Lokaltog/vim-powerline'
-Plugin 'powerline/powerline'
-Plugin 'vim-scripts/taglist.vim'
+Plugin 'Lokaltog/vim-powerline'
+" Plugin 'powerline/powerline'
+"" Plugin 'vim-scripts/taglist.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -73,17 +72,25 @@ set autoindent
 set nostartofline
 set ruler
 set laststatus=2
+set t_Co=256
+let g:Powerline_symbols= 'fancy'
 set showtabline=2
 set confirm
 set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+set listchars=tab:>-,trail:-,eol:¬ " Visualize tabs and newlines
+
 nnoremap <C-L> :nohl<CR><C-L>
 nnoremap <LEADER>f :NERDTreeToggle<CR>
 syntax on 
+set colorcolumn=80
 colorscheme desert
-
+set cursorline  " highlight current line
+set cursorcolumn " highlight current column
+" hi CursorLine   cterm=NONE ctermbg=darkblue ctermfg=white guibg=darkred guifg=white
+" hi CursorColumn cterm=NONE ctermbg=darkblue ctermfg=white guibg=darkred guifg=white
 set autowrite
 set showmatch
 set incsearch
